@@ -1,0 +1,13 @@
+go 1.24.5
+
+use (
+	./apps/api
+	./internal/auth
+	./internal/terminal
+	./internal/transaction
+	./internal/user
+	./pkg/config
+	./pkg/database
+	./pkg/jwt
+	./pkg/utils
+)

@@ -1,0 +1,68 @@
+### Register User
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Get User Profile (Protected)
+GET http://localhost:8080/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+
+
+### Get All Terminals (Protected)
+GET http://localhost:8080/api/terminals
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+
+### Create New Terminal (Protected)
+POST http://localhost:8080/api/terminals
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+Content-Type: application/json
+
+{
+  "name": "Terminal F",
+  "address": "Jl. Terminal A No.1",
+  "latitude": -6.175392,
+  "longitude": 106.827153
+}
+
+### Add Gate to Terminal (Protected)
+POST http://localhost:8080/api/terminals/1/gates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+Content-Type: application/json
+
+{
+  "name": "Gate A1",
+  "is_active": true
+}
+
+### Create New Card (Protected)
+POST http://localhost:8080/api/cards
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+Content-Type: application/json
+
+{
+  "number": "1234567890123456",
+  "balance": 100000
+}
+
+### Top Up Card (Protected)
+POST http://localhost:8080/api/cards/topup
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoidXNlciIsImV4cCI6MTc1NDQ2Mzk1Nn0.nIzfwdMnkW4inLUhsQIhCJnWB0ggz-xoy-nJEewPRJw
+Content-Type: application/json
+
+{
+  "card_number": "1234567890123456",
+  "amount": 50000
+}
